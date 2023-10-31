@@ -9,16 +9,25 @@
     <link rel="stylesheet" href="css/index.css">
 
     <script src="js/camera.js"></script>
+    <script src="js/timer.js"></script>
     <script src="js/index.js"></script>
 </head>
 
-<body onload="init()">
+<body onload="init()" onclick="start()">
     <canvas style="display: none;"></canvas>
 
-    <div id="cameraView" onclick="snapshot()">
+    <div id="instructionView" class="fullsize">
+        <div id="startInstructions">
+            <h1>Photobooth</h1>
+            <h2>Bildschirm antippen um Countdown zu starten</h2>
+        </div>
+        
+        <div id="countdown" class="center dot">4</div>
+    </div>
+    
+    <div id="cameraView">
         <video id="cameraPlayer" class="fullheight center" muted autoplay></video>
     </div>
-
 </body>
 
 </html>

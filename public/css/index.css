@@ -1,5 +1,7 @@
 body {
     margin: 0;
+    background-color: black;
+    font-family: Raleway;
 }
 
 .fullsize {
@@ -22,4 +24,33 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.dot {
+    height: 100px;
+    width: 100px;
+    font-size: 5rem;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 70%;
+}
+
+#instructionView {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+#startInstructions {
+    background-color: grey;
+    opacity: 70%;
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/raleway-v29-latin-regular.woff2') format('woff2');
 }
