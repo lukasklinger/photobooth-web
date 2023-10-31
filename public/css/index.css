@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+}
+
+.fullsize {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.fullwidth {
+    width: 100vw;
+}
+
+.fullheight {
+    height: 100vh;
+}
+
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
