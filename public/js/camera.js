@@ -22,7 +22,6 @@ function startCamera() {
         })
 }
 
-
 function snapshot() {
     var canvas = document.querySelector("canvas")
     var context = canvas.getContext("2d")
@@ -30,4 +29,16 @@ function snapshot() {
 
     context.fillRect(0, 0, w, h);
     context.drawImage(video, 0, 0, w, h);
+}
+
+function saveSnapshot() {
+    document.querySelector("canvas").toBlob((blob) => {
+        let formData = new FormData()
+        formData.append('photo', blob, (roomID + "-" + Date.now() + "-photo.png"))
+
+        fetch(window.location.href + "upload", {
+            method: 'POST',
+            body: formData
+        }).then(data => {console.log(data)})
+    })
 }

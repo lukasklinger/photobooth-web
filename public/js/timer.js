@@ -2,7 +2,7 @@ var countdownCount = 0
 var shotCount = 0
 
 function start() {
-    countdownCount = 3
+    countdownCount = 5
     shotCount = 0
 
     countdownTick()
@@ -33,14 +33,16 @@ function takeShot() {
 
     // take photo
     snapshot()
+    playShutter()
 
-    // TODO save photo
+    // save photo
+    saveSnapshot()
 
     shotCount++
     
     if (shotCount <= 3) {
-        countdownCount = 3
-        setTimeout(1000, countdownTick)
+        countdownCount = 4
+        setTimeout(countdownTick, 1000)
     }
 
     if (shotCount > 3) {

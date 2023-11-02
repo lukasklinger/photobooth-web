@@ -8,8 +8,14 @@
 
     <link rel="stylesheet" href="css/index.css">
 
+    <script src="js/libs/jquery.min.js"></script>
+    <script src="js/libs/qrcode.min.js"></script>
     <script src="js/camera.js"></script>
     <script src="js/timer.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/keyboard.js"></script>
+    <script src="js/room.js"></script>
+    <script src="js/qr.js"></script>
     <script src="js/index.js"></script>
 </head>
 
@@ -19,14 +25,19 @@
     <div id="instructionView" class="fullsize">
         <div id="startInstructions">
             <h1>Photobooth</h1>
-            <h2>Bildschirm antippen um Countdown zu starten</h2>
+            <h2>Bildschirm antippen/Leertaste drücken um Countdown zu starten</h2>
+            <div id="qrcode"></div>
         </div>
         
-        <div id="countdown" class="center dot">4</div>
+        <div id="countdown" class="center dot"></div>
     </div>
     
     <div id="cameraView">
         <video id="cameraPlayer" class="fullheight center" muted autoplay></video>
+    </div>
+
+    <div>
+        <audio id="shutter" src="audio/shutter.mp3" preload="auto"></audio>
     </div>
 </body>
 

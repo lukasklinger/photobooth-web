@@ -45,6 +45,7 @@ body {
 #startInstructions {
     background-color: grey;
     opacity: 70%;
+    min-height: 128px;
 }
 
 @font-face {
