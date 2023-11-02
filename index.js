@@ -7,7 +7,7 @@ const fs = require('fs')
 
 const storage = multer.diskStorage(
     {
-        destination: './photos/',
+        destination: './public/photos/',
         filename: function (req, file, cb) { cb(null, file.originalname) }
     }
 )
@@ -38,9 +38,9 @@ app.get('/photos/:id', (req, res) => {
         return file.startsWith(req.params.id);
     })
 
-    console.log(files)
+    files = files.reverse()
 
-    res.render('photos', { title: 'Hey', message: 'Hello there!' })
+    res.render('photos', { photos: files })
 })
 
 app.post('/upload', upload.single('photo'), (req, res) => {
