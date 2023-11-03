@@ -12,6 +12,7 @@ function countdownTick() {
     console.log("tick")
 
     document.querySelector('#startInstructions').style.visibility = 'hidden'
+    document.querySelector('#qrCodeBox').style.visibility = 'hidden'
     document.querySelector('#countdown').style.visibility = 'visible'
 
     document.querySelector('#countdown').textContent = countdownCount
@@ -47,5 +48,6 @@ function takeShot() {
 
     if (shotCount > 3) {
         document.querySelector('#startInstructions').style.visibility = 'visible'
+        document.querySelector('#qrCodeBox').style.visibility = 'visible'
     }
 }

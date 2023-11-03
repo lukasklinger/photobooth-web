@@ -29,11 +29,12 @@ body {
 .dot {
     height: 100px;
     width: 100px;
-    font-size: 5rem;
-    background-color: #bbb;
+    font-size: 4.5rem;
+    background-color: #427D9D;
     border-radius: 50%;
     display: inline-block;
-    opacity: 70%;
+    opacity: 80%;
+    color: #DDF2FD;
 }
 
 #instructionView {
@@ -43,9 +44,27 @@ body {
 }
 
 #startInstructions {
-    background-color: grey;
-    opacity: 70%;
-    min-height: 128px;
+    background-color: #164863;
+    opacity: 90%;
+    padding: 20px 0px 20px 0px;
+    color: #DDF2FD;
+    top: 0px;
+    position: fixed;
+    width: 100vw;
+}
+
+#qrCodeBox {
+    background-color: #DDF2FD;
+    box-shadow: 0 0 5px 10px #DDF2FD;
+    padding: 0px 0px 5px 5px;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+}
+
+#qrcode {
+    width: 128px;
+    height: 128px;
 }
 
 @font-face {
