@@ -1,7 +1,10 @@
 html
   head
-    title= "title"
+    title= "Photobooth"
+    link(rel='stylesheet' href='/css/photos.css')
   body
-    h1= "message"
     each photo in photos
-      img(src= '/photos/' + photo)
+      div(class='responsive')
+        div(class='gallery')
+          a(target='_blank' href=('/photos/' + photo))
+            img(width='600' height='400' src=('/photos/' + photo))
