@@ -19,7 +19,7 @@
     <script src="js/index.js"></script>
 </head>
 
-<body onload="init()" onclick="start()">
+<body onload="init()">
     <canvas style="display: none;"></canvas>
 
     <div id="instructionView" class="fullsize">
@@ -40,6 +40,8 @@
     <div>
         <audio id="shutter" src="audio/shutter.mp3" preload="auto"></audio>
     </div>
+
+    <div id="clickable" class="fullsize" onclick="start()"></div>
 </body>
 
 </html>

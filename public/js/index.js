@@ -10,5 +10,5 @@ function init() {
     startCamera()
     registerKeyboard()
     fetchRoomName()
-    createQR()
+    createQR(200, 200)
 }

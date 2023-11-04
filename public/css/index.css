@@ -54,17 +54,20 @@ body {
 }
 
 #qrCodeBox {
-    background-color: #DDF2FD;
-    box-shadow: 0 0 5px 10px #DDF2FD;
+    background-color: white;
+    box-shadow: 0 0 5px 10px white;
     padding: 0px 0px 5px 5px;
     position: fixed;
     bottom: 0px;
     left: 0px;
+    z-index: 6;
 }
 
-#qrcode {
-    width: 128px;
-    height: 128px;
+#clickable {
+    z-index: 5;
+    position: absolute;
+    top: 0px;
+    left: 0px;
 }
 
 @font-face {
