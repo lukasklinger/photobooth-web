@@ -11,4 +11,5 @@ function init() {
     registerKeyboard()
     fetchRoomName()
     createQR(200, 200)
+    runiOSAudioFix()
 }
