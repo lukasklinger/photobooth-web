@@ -5,8 +5,13 @@ html
     link(rel='icon' type='image/png' href='assets/173739_photobooth_icon.png')
     link(rel='apple-touch-icon' sizes='512x512' href='assets/173739_photobooth_icon.png')
   body
-    each photo in photos
-      div(class='responsive')
-        div(class='gallery')
-          a(target='_blank' href=('/photos/' + photo))
-            img(width='600' height='400' src=('/photos/' + photo))
+    div(style="padding: 15px; text-align: center;")
+      a(href="/download/" + roomID)
+        button(class="button-5" role="button" id="downloadAllButton") Alle Fotos herunterladen
+
+    div
+      each photo in photos
+        div(class='responsive')
+          div(class='gallery')
+            a(target='_blank' href=('/photos/' + photo))
+              img(width='600' height='400' src=('/photos/' + photo))

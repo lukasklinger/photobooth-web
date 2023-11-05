@@ -4,6 +4,7 @@ const multer = require('multer')
 const http = require('http')
 const server = http.createServer(app)
 const fs = require('fs')
+const archiver = require('archiver')
 
 const storage = multer.diskStorage(
     {
@@ -33,18 +34,34 @@ app.get('/', (req, res) => {
 })
 
 app.get('/photos/:id', (req, res) => {
-    // get photos for room
-    let files = fs.readdirSync(__dirname + '/public/photos').filter((file) => {
-        return file.startsWith(req.params.id);
-    })
+    res.render('photos', { photos: getRoomPhotos(req.params.id), roomID: req.params.id })
+})
 
-    files = files.reverse()
+app.get('/download/:id', (req, res) => {
+    let files = getRoomPhotos(req.params.id)
+    let zip = archiver('zip')
 
-    res.render('photos', { photos: files })
+    zip.pipe(res)
+
+    for (let i = 0; i < files.length; i++) {
+        let file = files[i];
+        let path = __dirname + '/public/photos/' + file
+        zip.append(fs.createReadStream(path), { name: file })
+    }
+
+    zip.finalize()
 })
 
 app.post('/upload', upload.single('photo'), (req, res) => {
     res.redirect('/');
 })
+
+function getRoomPhotos(roomID) {
+    let files = fs.readdirSync(__dirname + '/public/photos').filter((file) => {
+        return file.startsWith(roomID + "-");
+    })
+
+    return files.reverse()
+}
 
 server.listen(3000, () => { console.log('listening on *:3000') })

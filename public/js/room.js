@@ -6,7 +6,7 @@ function fetchRoomName() {
 
     if (roomID == "") {
         // generate ID
-        roomID = generateString(8)
+        roomID = generateString(10)
         setCookie("room", roomID, 1)
     }
 
