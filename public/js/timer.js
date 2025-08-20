@@ -40,13 +40,17 @@ function takeShot() {
     saveSnapshot()
 
     shotCount++
-    
+
     if (shotCount <= 3) {
         countdownCount = 4
         setTimeout(countdownTick, 1000)
     }
 
     if (shotCount > 3) {
+        // After 4th shot, combine and upload
+        if (typeof combineAndUploadPhotos === 'function') {
+            combineAndUploadPhotos();
+        }
         document.querySelector('#startInstructions').style.visibility = 'visible'
         document.querySelector('#qrCodeBox').style.visibility = 'visible'
     }
