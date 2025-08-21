@@ -4,6 +4,7 @@ var shotCount = 0
 function start() {
     countdownCount = 5
     shotCount = 0
+    capturedPhotos = []
 
     countdownTick()
 }
